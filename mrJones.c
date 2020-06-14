@@ -1,7 +1,7 @@
-/* Calculates Mr. Jones's inheritence to his twin children.
-	- if boy: 2/3 for son, 1/3 for wife
-	- if girl: 1/3 for daughter, 2/3 for wife
-	- if twins: ?
+/* Calculates Mr. Jones's inheritence to his offspring as follows...
+	- if it's a boy: 2/3 for son, 1/3 for wife
+	- if it's a girl: 1/3 for daughter, 2/3 for wife
+	- if it's twins: ???
 */
 
 #include<stdio.h>
@@ -13,21 +13,21 @@ int main(void) {
 	float estate;
 	char offspring[5]; 
 
-printf("Enter estate value: ");
-scanf("%f", &estate);
+	printf("Enter estate value: ");
+	scanf("%f", &estate);
 
-printf("Enter one of: boy/girl/twins: ");
-scanf("%s", offspring);
+	printf("Enter one of: boy/girl/twins: ");
+	scanf("%s", offspring);
 
-printf("%.2f\n", estate);
-printf("%s\n", offspring);
+	printf("%.2f\n", estate);
+	printf("%s\n", offspring);
 
-sonsCutBeforeMomsCut = estate * .66;
-daughtersCutBeforeMomsCut = estate * .33;
+	sonsCutBeforeMomsCut = estate * .66;
+	daughtersCutBeforeMomsCut = estate * .33;
 
-printf("%s\n", offspring);
-printf("%.2f\n", sonsCutBeforeMomsCut);
-printf("%.2f\n", daughtersCutBeforeMomsCut);
+	printf("%s\n", offspring);
+	printf("%.2f\n", sonsCutBeforeMomsCut);
+	printf("%.2f\n", daughtersCutBeforeMomsCut);
 
 	if(offspring == "boy") {
 		printf("It's a Boy!\nThe son receives %.2f and mom gets %.2f\n", 
