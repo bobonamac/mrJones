@@ -11,36 +11,33 @@ int main(void) {
 	int sonsCutBeforeMomsCut;
 	int daughtersCutBeforeMomsCut;
 	float estate;
-	char offspring[5]; 
+	char offspring; 
 
 	printf("Enter estate value: ");
 	scanf("%f", &estate);
 
-	printf("Enter one of: boy/girl/twins: ");
-	scanf("%s", offspring);
+	printf("Enter b for a boy, g for a girl, or t for twins: ");
+	scanf(" %c", &offspring);
 
-	printf("%.2f\n", estate);
-	printf("%s\n", offspring);
+	printf("\nestate: %.2lf\n", estate);
+	printf("offspring: %c\n", offspring);
 
-	sonsCutBeforeMomsCut = estate * .66;
-	daughtersCutBeforeMomsCut = estate * .33;
+	sonsCutBeforeMomsCut = estate * .66666;
+	daughtersCutBeforeMomsCut = estate * .33333;
 
-	printf("%s\n", offspring);
-	printf("%.2f\n", sonsCutBeforeMomsCut);
-	printf("%.2f\n", daughtersCutBeforeMomsCut);
+	printf("sonsCutBeforeMomsCut: %.2d\n", sonsCutBeforeMomsCut);
+	printf("daughtersCutBeforeMomsCut: %.2d\n", daughtersCutBeforeMomsCut);
 
-	if(offspring == "boy") {
-		printf("It's a Boy!\nThe son receives %.2f and mom gets %.2f\n", 
-			(estate * .66), (estate * .33));
+	if(offspring == 'b') {
+		printf("It's a Boy!\nThe son receives %.2lf and mom gets %.2lf\n", 
+			(estate * .66666), (estate * .33333));
 	}
-	else if(offspring == "girl") {
-		printf("It's a Girl!\nThe daughter receives %.2f and mom gets %.2f\n",
-		 (estate * .33), (estate * .66));
+	else if(offspring == 'g') {
+		printf("It's a Girl!\nThe daughter receives %.2lf and mom gets %.2lf\n",
+		 (estate * .33333), (estate * .66666));
 	}
 	else {
-		printf("It's Twins!\nThe son receives %.2f and the daughter receives %.2f
-		 and mom gets %.2f\n", (sonsCutBeforeMomsCut * .66), (daughtersCutBeforeMomsCut * .33), 
-		 ((sonsCutBeforeMomsCut * .33) + (daughtersCutBeforeMomsCut * .66)));
+		printf("It's Twins!\nThe son receives %.2lf and the daughter receives %.2lf and mom gets %.2lf\n", (sonsCutBeforeMomsCut * .66666), (daughtersCutBeforeMomsCut * .33333), ((sonsCutBeforeMomsCut * .33333) + (daughtersCutBeforeMomsCut * .66666)));
 	}
-
+	printf("\n");
 }
